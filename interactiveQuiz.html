@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz për Shëndetin Mendor</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<style>
+body {
+background-color: lightgoldenrodyellow;
+}
+h2 {
+margin-top: 40px;
+color: s;
+}
+.result {
+font-weight: bold;
+font-size: 1.2rem;
+color: forestgreen;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<div class="container-fluid">
+<a class="navbar-brand" href="index.html">Shëndeti Mendor</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">Rreth</a></li>
+<li class="nav-item"><a class="nav-link" href="risks.html">Rreziqet</a></li>
+<li class="nav-item"><a class="nav-link" href="prevention.html">Parandalimi</a></li>
+<li class="nav-item"><a class="nav-link active" href="interactiveQuiz.html">Quiz</a></li>
+<li class="nav-item"><a class="nav-link" href="profile.html">Profili</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Main Content -->
+<div class="container text-center mt-5">
+<h2>Quiz: Sa e njeh shëndetin mendor?</h2>
+
+<form id="quizForm" class="mt-4">
+<div class="mb-3">
+<label>1. A është stresi gjithmonë i dëmshëm?</label><br>
+<input type="radio" name="q1" value="false"> Po<br>
+<input type="radio" name="q1" value="true"> Jo
+</div>
+<div class="mb-3">
+<label>2. Sa orë gjumë i duhen një adoleshenti?</label><br>
+<input type="radio" name="q2" value="false"> 4-5 orë<br>
+<input type="radio" name="q2" value="true"> 8-10 orë
+</div>
+<div class="mb-3">
+<label>3. Cili është një nga përfitimet e meditimit?</label><br>
+<input type="radio" name="q3" value="true"> Ul ankthin<br>
+<input type="radio" name="q3" value="false"> Rrit stresin
+</div>
+<div class="mb-3">
+<label>4. A ndikon ushqimi në shëndetin mendor?</label><br>
+<input type="radio" name="q4" value="true"> Po<br>
+<input type="radio" name="q4" value="false"> Jo
+</div>
+
+<button type="button" class="btn btn-success" onclick="kontrolloQuiz()">Dërgo</button>
+</form>
+
+<div class="result" id="rezultati"></div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+<p>&copy; 2025 Punoi Milihate Doberjanca | Quiz për Shëndetin Mendor</p>
+</footer>
+
+<!-- Script -->
+<script>
+function kontrolloQuiz() {
+let sakt = 0;
+
+let pyetjet = ["q1", "q2", "q3", "q4"];
+for (let i = 0; i < pyetjet.length; i++) {
+let vlera = document.querySelector('input[name="' + pyetjet[i] + '"]:checked');
+if (vlera && vlera.value === "true") {
+sakt++;
+}
+}
+
+let rezultat = "";
+let mesazh = "";
+
+// përdorim operatore krahasimi dhe logjik
+if (sakt === 4) {
+mesazh = "Shkëlqyeshëm!";
+} else if (sakt >= 2 && sakt < 4) {
+mesazh = "Mjaft mirë!";
+} else {
+mesazh = "Ke nevojë të mësosh më shumë!";
+}
+
+// math method për shembull
+let perc = Math.floor((sakt / 4) * 100);
+
+// string method për stilim të mesazhit
+rezultat = "Saktësi: " + sakt + "/4 (" + perc + "%) - " + mesazh.toUpperCase();
+
+document.getElementById("rezultati").innerText = rezultat;
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>

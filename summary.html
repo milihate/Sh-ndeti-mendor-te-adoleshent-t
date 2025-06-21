@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Përmbledhje</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<style>
+body {
+background-color: wheat;
+}
+h2 {
+margin-top: 40px;
+color: red;
+}
+.result {
+margin-top: 20px;
+font-weight: bold;
+color: lightseagreen;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<div class="container-fluid">
+<a class="navbar-brand" href="index.html">Shëndeti Mendor</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">Rreth</a></li>
+<li class="nav-item"><a class="nav-link" href="risks.html">Rreziqet</a></li>
+<li class="nav-item"><a class="nav-link" href="prevention.html">Parandalimi</a></li>
+<li class="nav-item"><a class="nav-link" href="resources.html">Burimet</a></li>
+<li class="nav-item"><a class="nav-link" href="interactiveQuiz.html">Quiz</a></li>
+<li class="nav-item"><a class="nav-link" href="gallery.html">Galeria</a></li>
+<li class="nav-item"><a class="nav-link active" href="summary.html">Përmbledhje</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Content -->
+<div class="container mt-5">
+<h2 class="text-center">Përmbledhje e Projektit</h2>
+
+<p class="lead text-center">Ky projekt përfshin 9 faqe interaktive dhe edukative për temën "Shëndeti Mendor tek Adoleshentët".</p>
+
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<thead class="table-warning">
+<tr>
+<th>Faqja</th>
+<th>Përshkrimi</th>
+<th>Elementët Përdorur</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Home</td><td>Prezantim i projektit</td><td>HTML, CSS, Bootstrap</td></tr>
+<tr><td>Rreth</td><td>Çfarë është shëndeti mendor</td><td>Cards, Grid</td></tr>
+<tr><td>Rreziqet</td><td>Si ndikon negativisht</td><td>Cards, Foto</td></tr>
+<tr><td>Parandalimi</td><td>Mënyrat për ta mbrojtur veten</td><td>Cards, CSS</td></tr>
+<tr><td>Burimet</td><td>Ndihmë dhe kontakte</td><td>Tabela, Linke</td></tr>
+<tr><td>Quiz</td><td>Pyetje interaktive</td><td>JavaScript, Events, Math</td></tr>
+<tr><td>Profili</td><td>Të dhënat personale</td><td>Objekte, String Methods</td></tr>
+<tr><td>Galeria</td><td>Foto me emocione</td><td>Loop, Array, Output</td></tr>
+<tr><td>Përmbledhje</td><td>Ky përshkrim përfundimtar</td><td>Loop, Math, Llogaritje</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="text-center mt-4">
+<button class="btn btn-danger" onclick="llogaritInteraktive()">Sa faqe janë interaktive?</button>
+<div class="result" id="outputDiv"></div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+<p>&copy; 2025 Punoi Milihate Doberjanca | Përmbledhje e Projektit</p>
+</footer>
+
+<!-- Script -->
+<script>
+function llogaritInteraktive() {
+let totali = 9;
+let interaktive = 4; // quiz, profile, gallery, summary
+
+let perc = Math.floor((interaktive / totali) * 100);
+let msg = "Projekti ka " + interaktive + " faqe interaktive nga " + totali + " gjithsej (" + perc + "%)";
+document.getElementById("outputDiv").innerText = msg;
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
